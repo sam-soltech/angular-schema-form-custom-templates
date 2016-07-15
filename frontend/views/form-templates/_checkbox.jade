@@ -1,0 +1,5 @@
+.checkbox.schema-form-checkbox(class='{{form.htmlClass}}', ng-class="{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess()}")
+  label.(class='{{form.labelHtmlClass}}')
+    input.(type='checkbox', sf-changed='form', ng-disabled='form.readonly', ng-model='$$value$$', ng-model-options='form.ngModelOptions', schema-validate='form', class='{{form.fieldHtmlClass}}', name='{{form.key.slice(-1)[0]}}')
+    span(ng-bind-html='form.title')
+  .help-block(sf-message='form.description')

@@ -1,0 +1,29 @@
+{
+  "name": "dts",
+  "version": "1.0.0",
+  "description": "web app for dts",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "typings install && bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soltechinc/dts.git"
+  },
+  "author": "soltech inc",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "browser-sync": "^2.9.8",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tsc": "^1.1.4",
+    "gulp-typescript": "^2.9.2",
+    "jade": "^1.11.0",
+    "typings": "^0.7.12",
+    "gulp-concat": "^2.6.0"
+  }
+}

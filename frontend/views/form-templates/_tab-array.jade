@@ -1,0 +1,24 @@
+.clearfix.schema-form-tabarray(sf-array='form', ng-init='selected = { tab: 0 }', class="schema-form-tabarray-{{form.tabType || 'left'}} {{form.htmlClass}}")
+  div(ng-if="!form.tabType || form.tabType !== 'right'", ng-class="{'col-xs-3': !form.tabType || form.tabType === 'left'}")
+    ul.nav.nav-tabs(ng-class="{ 'tabs-left': !form.tabType || form.tabType === 'left'}")
+      li(ng-repeat='item in modelArray track by $index', ng-click='$event.preventDefault() || (selected.tab = $index)', ng-class='{active: selected.tab === $index}')
+        a(href='#') {{interp(form.title,{'$index':$index, value: item}) || $index}}
+      li(ng-hide='form.readonly', ng-click='$event.preventDefault() || (selected.tab = appendToArray().length - 1)')
+        a(href='#')
+          i.glyphicon.glyphicon-plus
+          |  {{ form.add || 'Add'}}
+  div(ng-class="{'col-xs-9': !form.tabType || form.tabType === 'left' || form.tabType === 'right'}")
+    .tab-content(class='{{form.fieldHtmlClass}}')
+      .tab-pane.clearfix(ng-repeat='item in modelArray track by $index', ng-show='selected.tab === $index', ng-class='{active: selected.tab === $index}')
+        sf-decorator(ng-init='arrayIndex = $index', form='copyWithIndex($index)')
+        button.btn.pull-right(ng-hide='form.readonly', ng-click='selected.tab = deleteFromArray($index).length - 1', type='button', class="{{ form.style.remove || 'btn-default' }}")
+          i.glyphicon.glyphicon-trash
+          |  {{ form.remove || 'Remove'}}
+  .col-xs-3(ng-if="form.tabType === 'right'")
+    ul.nav.nav-tabs.tabs-right
+      li(ng-repeat='item in modelArray track by $index', ng-click='$event.preventDefault() || (selected.tab = $index)', ng-class='{active: selected.tab === $index}')
+        a(href='#') {{interp(form.title,{'$index':$index, value: item}) || $index}}
+      li(ng-hide='form.readonly', ng-click='$event.preventDefault() || appendToArray()')
+        a(href='#')
+          i.glyphicon.glyphicon-plus
+          |  {{ form.add || 'Add'}}

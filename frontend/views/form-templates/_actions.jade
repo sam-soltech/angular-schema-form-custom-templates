@@ -1,0 +1,5 @@
+.btn-group.schema-form-actions(class='{{form.htmlClass}}')
+  input.btn(ng-repeat-start='item in form.items', type='submit', class="{{ item.style || 'btn-default' }} {{form.fieldHtmlClass}}", value='{{item.title}}', ng-if="item.type === 'submit'")
+  button.btn(ng-repeat-end='', class="{{ item.style || 'btn-default' }} {{form.fieldHtmlClass}}", type='button', ng-disabled='form.readonly', ng-if="item.type !== 'submit'", ng-click='buttonClick($event,item)')
+    span.(ng-if='item.icon', class='{{item.icon}}')
+    | {{item.title}}

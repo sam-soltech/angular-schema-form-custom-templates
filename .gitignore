@@ -1,0 +1,86 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+*.stackdump
+.DS_Store
+
+# MySQL Connection
+mysqlconn.json
+*.sublime-workspace
+
+# Runtime data
+pids
+*.pid
+*.seed
+devdb.json
+schedulerConfiguration.json
+
+# Dependency directory
+node_modules
+bower_components
+
+# Public (html/css/client-side js)
+public/**/*
+
+# TypeScript output
+Enums.js
+Enums.js.map
+server.js
+server.js.map
+utils.js
+utils.js.map
+references.js
+references.js.map
+server/**/*.js
+server/**/*.js.map
+frontend/js/*.js
+frontend/js/[Cc]ontrollers/**/*.js
+frontend/js/[Dd]irectives/**/*.js
+#frontend/js/[Ff]ilters/**/*.js
+frontend/js/[Ii]nterfaces/**/*.js
+frontend/js/[Mm]odels/**/*.js
+frontend/js/[Ss]ervices/**/*.js
+mysql_models/*.js
+mysql_models/*.js.map
+frontend/js/*.js
+frontend/js/[Cc]ontrollers/**/*.js
+#frontend/js/[Ff]ilters/**/*.js
+frontend/js/[Ii]nterfaces/**/*.js
+frontend/js/[Mm]odels/**/*.js
+frontend/js/[Ss]ervices/**/*.js
+frontend/js/**/*.js
+frontend/js/**/*.js.map
+test/**/*.js
+test/**/*.js.map
+streamProcessors/**/*.js
+streamProcessors/**/*.js.map
+
+# Deployment
+deployment/**/*
+
+# Node Tools Analysis
+.vs
+.ntvs_analysis.dat
+
+# Build output
+obj/
+bin/
+
+# Email
+mailconfig.auth.json
+test/angular/controllers/Controllers.js.map
+test/server/frontend/Models.js
+test/server/frontend/Models.js.map
+
+# WebStorm
+.idea/*
+
+streamProcessors/alarmLambda/common
+streamProcessors/notificationLambda/common
+streamProcessors/variableLambda/common
+streamProcessors/**/*.zip
+awsmysqlconn.json
+
+Scheduler/lib
+schedulerConfiguration.local.json

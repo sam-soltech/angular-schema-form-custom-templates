@@ -1,0 +1,13 @@
+.schema-form-array(sf-array='form', class='{{form.htmlClass}}', ng-model='$$value$$', ng-model-options='form.ngModelOptions')
+  label.control-label(ng-show='showTitle()') {{ form.title }}
+  ol.list-group(ng-model='modelArray', ui-sortable='')
+    li.list-group-item(class='{{form.fieldHtmlClass}}', ng-repeat='item in modelArray track by $index')
+      button.close.pull-right(ng-hide='form.readonly || form.remove === null', ng-click='deleteFromArray($index)', style='position: relative; z-index: 20;', type='button')
+        span(aria-hidden='true') ×
+        span.sr-only Close
+      sf-decorator(ng-init='arrayIndex = $index', form='copyWithIndex($index)')
+  .clearfix(style='padding: 15px;')
+    button.btn.pull-right(ng-hide='form.readonly || form.add === null', ng-click='appendToArray()', type='button', class="{{ form.style.add || 'btn-default' }}")
+      i.glyphicon.glyphicon-plus
+      |  {{ form.add || 'Add'}}
+  .help-block(ng-show='(hasError() && errorMessage(schemaError())) || form.description', ng-bind-html='(hasError() && errorMessage(schemaError())) || form.description')

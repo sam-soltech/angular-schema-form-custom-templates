@@ -1,0 +1,8 @@
+.form-group.has-feedback.schema-form-textarea(class='{{form.htmlClass}}', ng-class="{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess()}")
+  label.(class='{{form.labelHtmlClass}}', ng-class="{'sr-only': !showTitle()}", for='{{form.key.slice(-1)[0]}}') {{form.title}}
+  textarea.form-control(ng-if='!form.fieldAddonLeft && !form.fieldAddonRight', class='{{form.fieldHtmlClass}}', id='{{form.key.slice(-1)[0]}}', sf-changed='form', placeholder='{{form.placeholder}}', ng-disabled='form.readonly', ng-model='$$value$$', ng-model-options='form.ngModelOptions', schema-validate='form', name='{{form.key.slice(-1)[0]}}')
+  div(ng-if='form.fieldAddonLeft || form.fieldAddonRight', ng-class="{'input-group': (form.fieldAddonLeft || form.fieldAddonRight)}")
+    span.input-group-addon(ng-if='form.fieldAddonLeft', ng-bind-html='form.fieldAddonLeft')
+    textarea.form-control(class='{{form.fieldHtmlClass}}', id='{{form.key.slice(-1)[0]}}', sf-changed='form', placeholder='{{form.placeholder}}', ng-disabled='form.readonly', ng-model='$$value$$', ng-model-options='form.ngModelOptions', schema-validate='form', name='{{form.key.slice(-1)[0]}}')
+    span.input-group-addon(ng-if='form.fieldAddonRight', ng-bind-html='form.fieldAddonRight')
+  span.help-block(sf-message='form.description')

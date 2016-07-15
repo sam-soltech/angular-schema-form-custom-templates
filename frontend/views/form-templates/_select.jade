@@ -1,0 +1,4 @@
+.form-group.schema-form-select(class='{{form.htmlClass}}', ng-class="{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess(), 'has-feedback': form.feedback !== false}")
+  label.control-label(class='{{form.labelHtmlClass}}', ng-show='showTitle()') {{form.title}}
+  select.form-control(ng-model='$$value$$', ng-model-options='form.ngModelOptions', ng-disabled='form.readonly', sf-changed='form', class='{{form.fieldHtmlClass}}', schema-validate='form', ng-options='item.value as item.name group by item.group for item in form.titleMap', name='{{form.key.slice(-1)[0]}}')
+  .help-block(sf-message='form.description')

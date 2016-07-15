@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "system",
+        "isolatedModules": false,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "sourceMap": true,
+        "sortOutput": true,
+        "rootDir": "./frontend/js"
+    },
+    "files": [
+      "./frontend/js/app.ts",
+      "./typings/index.d.ts",
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+}
